@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 애완용품샵</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="text/css" href="assets/css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 v-text="sitename"></h1>
+        </header>
+    </div>
+
+    <script type="text/javascript">
+        var APP_LOG_LIFECYCLE_EVENTS = true; // 콜백을 사용 또는 중지하는 데 사용되는 변수
+        var webstore = new Vue({
+            el: '#app',
+            data: {
+                sitename: 'Vue.js 애완용품샵'
+            },
+            beforeCreate: function() {
+                if(APP_LOG_LIFECYCLE_EVENTS) {
+                    console.log("beforeCreate");
+                }
+            },
+            created: function() {
+                if(APP_LOG_LIFECYCLE_EVENTS) {
+                    console.log("created");
+                }
+            },
+            beforeMount: function() {
+                if(APP_LOG_LIFECYCLE_EVENTS) {
+                    console.log("beforeMount");
+                }
+            },
+            mounted: function() {
+                if(APP_LOG_LIFECYCLE_EVENTS) {
+                    console.log("mounted");
+                }
+            },
+            beforeUpdate: function() {
+                if(APP_LOG_LIFECYCLE_EVENTS) {
+                    console.log("beforeUpdate");
+                }
+            },
+            updated: function() {
+                if(APP_LOG_LIFECYCLE_EVENTS) {
+                    console.log("updated");
+                }
+            },
+            beforeDestory: function() {
+                if(APP_LOG_LIFECYCLE_EVENTS) {
+                    console.log("beforeDestory");
+                }
+            },
+            destoryed: function() {
+                if(APP_LOG_LIFECYCLE_EVENTS) {
+                    console.log("destoryed");
+                }
+            }
+
+
+        })
+    </script>
+</body>
+</html>
