@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>넓이 계산</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <p>
+            넓이 : {{area}}
+        </p>
+        <p>
+            <button @click="length += 1">세로 추가</button>
+            <button @click="width += 1">가로 추가</button>
+        </p>
+    </div>
+    <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            length: 5,
+            width: 3
+        },
+        computed: {
+            area: function() {
+                return this.length * this.width;
+            }
+        },
+        watch: {
+            length: function(newVal, oldVal) {
+                console.log('이전 세로 길이: '
+                    + oldVal +
+                    '\n새 세로 길이: '
+                    + newVal);
+            },
+            width: function(newVal, oldVal) {
+                console.log('이전 가로 길이: '
+                    + oldVal +
+                    '\n새 가로 길이: '
+                    + newVal);
+            },
+            area: function(newVal, oldVal) {
+                console.log('이전 넓이: '
+                    + oldVal +
+                    '\n새 넓이: '
+                    + newVal);
+            }
+        },
+        beforeUpdate: function() {
+            console.log("데이터 변경은 결과괎 변경 이전에 이루어졌습니다.");
+        }
+    });
+    </script>
+</body>
+</html>
