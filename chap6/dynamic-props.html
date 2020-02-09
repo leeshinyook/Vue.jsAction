@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <my-component></my-component>
+    <my-component></my-component>
+    <my-component></my-component>
+  </div>
+<script>
+  const counter = {counter: 0};
+  const MyComponent = {
+    template: '<div><button v-on:click="counter += 1">{{counter}}</button></div>',
+    data() {
+      return counter; // 데이터함수는 전역 카운터를 반환합니다.
+    }
+  }
+  
+  new Vue({
+    el: '#app',
+    components: {'my-component': MyComponent},
+    data() {
+      return {
+        message: ''
+      }
+    }
+  });
+</script>
+</body>
+</html>
