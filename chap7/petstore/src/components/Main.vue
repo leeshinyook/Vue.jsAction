@@ -54,7 +54,7 @@ export default {
   name: 'imain',
   data() {
     return {
-      products: [],
+      products: {},
       cart: []
     }
   },
